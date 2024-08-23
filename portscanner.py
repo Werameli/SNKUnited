@@ -1,4 +1,4 @@
-from lib.decorator import shell_command, help_section
+from lib.decorator import shell_command
 import socket
 import time
 
@@ -17,21 +17,7 @@ class PlugInfo:
 
 
 class ShellIntegrations:
-    # help_texts = {}
-    #
-    # def __init__(self):
-    #     for attr_name in dir(self):
-    #         attr = getattr(self, attr_name)
-    #         if callable(attr) and hasattr(attr, '_is_shell_command'):
-    #             if hasattr(attr, '__help_text'):
-    #                 self.__class__.help_texts[attr_name] = attr.__help_text
-    #
-    # def do_help(self, args):
-    #     for command, description in self.__class__.help_texts.items():
-    #         print(f"{command}: {description}")
-
     @shell_command
-    @help_section("Scan IP address for opened ports. Usage: portscan")
     def do_portscan(self, arg):
         self.startscan()
 
